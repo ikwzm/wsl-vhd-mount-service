@@ -1,0 +1,11 @@
+[Unit]
+Description=Mount VHD(Virtual Hard Disk) on Windows to WSL
+Before=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/wsl-vhd-mount-service.sh --mount -c /etc/wsl-vhd-mount-service.d --all --verbose
+
+[Install]
+WantedBy=multi-user.target
+
