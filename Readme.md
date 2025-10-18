@@ -148,6 +148,17 @@ shell$ sudo cp systemd/wsl-vhd-mount.service /etc/systemd/system/
 shell$ sudo install -d /etc/wsl-vhd-mount-service.d
 ```
 
+### Installation via Debian Package
+
+```console
+shell$ sudo dpkg -i wsl-vhd-mount-service_0.1-1_all.deb
+Selecting previously unselected package wsl-vhd-mount-service.
+(Reading database ... 67747 files and directories currently installed.)
+Preparing to unpack wsl-vhd-mount-service_0.1-1_all.deb ...
+Unpacking wsl-vhd-mount-service (0.1-1) ...
+Setting up wsl-vhd-mount-service (0.1-1) ...
+```
+
 License
 ----------------------------------------------------------------------------------
 
