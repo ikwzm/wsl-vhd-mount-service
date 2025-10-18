@@ -1,0 +1,10 @@
+Package: wsl-vhd-mount-service
+Version: 0.1-1
+Section: admin
+Priority: optional
+Architecture: all
+Maintainer: Your Name <you@example.com>
+Description: WSL VHD mount service for Windows-attached virtual disks
+ This package provides a script and systemd service to mount or unmount
+ Windows VHD files into WSL automatically.
+ 
