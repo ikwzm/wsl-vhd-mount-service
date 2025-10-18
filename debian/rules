@@ -1,0 +1,27 @@
+#!/usr/bin/make -f
+
+export SHELL = /bin/bash
+
+%:
+	dh $@
+
+binary:
+	install -d debian/wsl-vhd-mount-service
+
+	install -d debian/wsl-vhd-mount-service/usr/local/bin
+	cp -a ./wsl-vhd-mount-service.sh debian/wsl-vhd-mount-service/usr/local/bin/
+	chmod 755 debian/wsl-vhd-mount-service/usr/local/bin/wsl-vhd-mount-service.sh
+
+	install -d debian/wsl-vhd-mount-service/etc/systemd/system
+	cp -a ./systemd/wsl-vhd-mount.service debian/wsl-vhd-mount-service/etc/systemd/system/
+
+	install -d debian/wsl-vhd-mount-service/etc/wsl-vhd-mount-service.d
+
+	install -d debian/wsl-vhd-mount-service/DEBIAN
+	cp debian/control  debian/wsl-vhd-mount-service/DEBIAN/
+	cp debian/postinst debian/wsl-vhd-mount-service/DEBIAN/
+	cp debian/prerm    debian/wsl-vhd-mount-service/DEBIAN/
+	chmod 755 debian/wsl-vhd-mount-service/DEBIAN/postinst
+	chmod 755 debian/wsl-vhd-mount-service/DEBIAN/prerm
+	dpkg-deb --build debian/wsl-vhd-mount-service .
+	
