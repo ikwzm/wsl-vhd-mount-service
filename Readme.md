@@ -137,6 +137,17 @@ INFO : do_fs_unmount[___] umount /mnt/home/work
 INFO : do_wsl_unmount[___] /mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe Start-Process -FilePath wsl.exe -Verb RunAs -ArgumentList "--unmount","D:\wsl\home\work\ext4.vhdx"
 ```
 
+Install
+----------------------------------------------------------------------------------
+
+### Maunal Installation
+
+```console
+shell$ sudo cp wsl-vhd-mount-service.sh /usr/local/bin/
+shell$ sudo cp systemd/wsl-vhd-mount.service /etc/systemd/system/
+shell$ sudo install -d /etc/wsl-vhd-mount-service.d
+```
+
 License
 ----------------------------------------------------------------------------------
 
